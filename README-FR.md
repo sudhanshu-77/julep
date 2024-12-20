@@ -1,4 +1,4 @@
-<sup>[English](README.md) | [中文翻译](README-CN.md) | [日本語翻訳](README-JA.md) | [French](README-FR.md)</sup>
+<sup>[Anglais](LISEZMOI.md) | [中文翻译](README-CN.md) | [日本語翻訳](README-JA.md) | [Français](README-FR.md)</sup>
 
 <div align="center" id="top">
  <img src="https://socialify.git.ci/julep-ai/julep/image?description=1&descriptionEditable=Rapidly%20build%20AI%20workflows%20and%20agents&font=Source%20Code%20Pro&logo=https%3A%2F%2Fraw.githubusercontent.com%2Fjulep-ai%2Fjulep%2Fdev%2F.github%2Fjulep-logo.svg&owner=1&forks=1&pattern=Solid&stargazers=1&theme=Auto" alt="julep" width="640" height="320" />
@@ -429,11 +429,11 @@ agent_id=agent.id,
 ### Étape 3 : Exécuter la tâche
 
 exécution = client.executions.create(
-task_id=tâche.id,
+task_id=task.id,
 input={"idea": "Un chat qui apprend à voler"}
 )
 
-# 🎉 Regardez l'histoire et les panneaux de bande dessinée se générer
+# 🎉 Regardez l'histoire et les panneaux de bandes dessinées se générer
 while (result := client.executions.get(execution.id)).status n'est pas dans ['réussi', 'échec'] :
 print(résultat.statut, résultat.sortie)
 heure.sommeil(1)
@@ -684,7 +684,7 @@ Agent --> Documents[Documents]
 Documents --> VectorDB[Base de données vectorielles]
 Tâches --> Exécutions[Exécutions]
 
-client classDef remplissage : #9ff, trait : #333, largeur du trait : 1 px ;
+client classDef fill:#9ff,trait:#333,largeur-trait:1px;
 classe Utilisateur client ;
 
 classDef core fill:#f9f,trait:#333,largeur-trait:2px;
@@ -782,7 +782,7 @@ Execute an integrated tool or API that you have previously declared in the task.
 <td>
 
 ```YAML
-- outil : recherche sur le Web
+- outil : recherche_sur_le_web
 Arguments:
 requête : « Derniers développements de l'IA » # <-- il s'agit d'une expression Python (remarquez les guillemets)
 num_results: len(_.topics) # <-- expression python pour accéder à la longueur d'une liste
@@ -948,7 +948,7 @@ Run multiple steps in parallel
 
 ```YAML
 - parallèle:
-- outil : recherche sur le Web
+- outil : recherche_sur_le_web
 Arguments:
 requête : « Actualités sur l'IA »
 - outil : weather_check
@@ -1068,7 +1068,7 @@ Run a subworkflow and await its completion
 - rendement:
 flux de travail : données_de_processus
 Arguments:
-données d'entrée : _. données brutes # <-- expression Python
+données_d'entrée : _. données_raw # <-- expression python
 ```
 
 </td>
@@ -1157,7 +1157,7 @@ description : Lister les agents à l'aide d'un appel système
 
 outils:
 - nom : list_agent_docs
-description : liste tous les documents pour l'agent donné
+description : Liste tous les documents pour l'agent donné
 type : système
 système:
 ressource : agent
@@ -1449,7 +1449,7 @@ Arguments:
 fichier : chaîne | tableau<string># Le fichier codé en base64 à analyser ou un tableau d'URL http/https à charger.
 nom de fichier : chaîne # (facultatif). Le nom de fichier du fichier. La valeur par défaut est un UUID aléatoire. Utilisé uniquement si le fichier est une chaîne codée en base64.
 params : dict # (facultatif) Paramètres supplémentaires pour l'intégration de Llama Parse. Remplace les paramètres de configuration.
-base64 : booléen # Indique si le fichier d'entrée est codé en base64. La valeur par défaut est false.
+base64 : booléen # Indique si le fichier d'entrée est encodé en base64. La valeur par défaut est false.
 
 sortir:
 documents : liste[Document] # Une liste de documents analysés
@@ -1520,7 +1520,7 @@ sort_by : chaîne # Le critère de tri pour les résultats, options : relevanc
 sort_order : chaîne # L'ordre de tri des résultats, options : croissant, décroissant
 
 sortir:
-résultat : liste[dict] # Une liste de résultats de recherche, chacun contenant : entry_id, title, updated, published, authors, summary, comment, journal_ref, doi, primary_category, categories, links, pdf_url, pdf_downloaded
+résultat : liste[dict] # Une liste de résultats de recherche, chacun contenant : entry_id, title, updated, published, authors, summary, comment, journal_ref, doi, primary_category, categorys, links, pdf_url, pdf_downloaded
 ```
 
 </td>
@@ -1680,7 +1680,7 @@ Julep, en revanche, s'intéresse davantage à la création d'agents d'IA persist
 Utilisez Julep si vous imaginez créer un assistant IA complexe qui doit :
 
 - Suivez les interactions des utilisateurs sur plusieurs jours ou semaines.
-- Exécutez des tâches planifiées, comme l'envoi de résumés quotidiens ou la surveillance de sources de données.
+- Exécutez des tâches planifiées, comme l'envoi de résumés quotidiens ou la surveillance des sources de données.
 - Prendre des décisions basées sur des interactions antérieures ou des données stockées.
 - Interagir avec plusieurs services externes dans le cadre de son flux de travail.
 
