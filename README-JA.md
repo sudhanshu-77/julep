@@ -1,4 +1,4 @@
-<sup>[English](README.md) | [中文翻译](README-CN.md) | [日本語翻訳](README-JA.md) | [French](README-FR.md)</sup>
+<sup>[英語](README.md) | [中文翻译](README-CN.md) | [日本語翻訳](README-JA.md) | [フランス語](README-FR.md)</sup>
 
 <div align="center" id="top">
  <img src="https://socialify.git.ci/julep-ai/julep/image?description=1&descriptionEditable=Rapidly%20build%20AI%20workflows%20and%20agents&font=Source%20Code%20Pro&logo=https%3A%2F%2Fraw.githubusercontent.com%2Fjulep-ai%2Fjulep%2Fdev%2F.github%2Fjulep-logo.svg&owner=1&forks=1&pattern=Solid&stargazers=1&theme=Auto" alt="julep" width="640" height="320" />
@@ -535,7 +535,7 @@ plot_ideas: load_yaml(_.split('\`\`\`yaml')[1].split('\`\`\`')[0].strip())
 in: _.research_queries
 する：
 ツール: research_wikipedia
-議論：
+引数:
 クエリ: _
 
 - 評価する：
@@ -589,7 +589,7 @@ const タスク = client.tasks.create(agentId, yaml.parse(taskYaml)) を待機�
 /* ステップ 3: タスクを実行する */
 
 非同期関数executeTask(taskId) {
-const 実行 = クライアント.実行.作成(taskId, {
+const 実行 = クライアントの実行の作成を待機します(taskId、{
 入力: { アイデア: 「飛ぶことを学ぶ猫」 },
   });
 
@@ -785,7 +785,7 @@ Execute an integrated tool or API that you have previously declared in the task.
 - ツール: web_search
 引数:
 クエリ: '"最新の AI 開発"' # <-- これは Python 式です (引用符に注意してください)
-num_results: len(_.topics) # <-- リストの長さにアクセスするための Python 式
+num_results: len(_.topics) # <-- リストの長さにアクセスするための python 式
 ```
 
 </td>
@@ -1516,7 +1516,7 @@ query: 文字列 # Arxivで検索するための検索クエリ
 id_list: list[string] | None # (オプション) 検索するArxiv IDのリスト
 max_results: 整数 # 返される結果の最大数は 1 から 300000 の間でなければなりません
 download_pdf: boolean # 結果の PDF をダウンロードするかどうか。デフォルトは false です。
-sort_by: 文字列 # 結果の並べ替え基準。オプション: 関連性、lastUpdatedDate、submittedDate
+sort_by: 文字列 # 結果の並べ替え基準、オプション: 関連性、lastUpdatedDate、submittedDate
 sort_order: 文字列 # 結果の並べ替え順序。オプション: 昇順、降順
 
 出力：
